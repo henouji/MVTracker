@@ -6,6 +6,15 @@ export const environment = {
   production: false
 };
 
+export const firebaseConfig = {
+  apiKey: "AIzaSyCgZTDxgduAHW9s29pBUS_lJqY-91p_3UY",
+  authDomain: "mvtrackerdb.firebaseapp.com",
+  databaseURL: "https://mvtrackerdb.firebaseio.com",
+  projectId: "mvtrackerdb",
+  storageBucket: "mvtrackerdb.appspot.com",
+  messagingSenderId: "558697676426"
+};
+
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.

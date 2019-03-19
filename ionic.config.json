@@ -1,5 +1,7 @@
 {
   "name": "MVTracker",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
