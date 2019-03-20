@@ -31,10 +31,10 @@ export class HomePage {
   }
 
   updateValue(){
-    this.itemRef.update({ x: 1 });
-    this.itemRef.update({ y: 2 });
-    this.itemRef.update({ z: 3 });
-    this.itemRef.update({ time: 4 });
+    this.itemRef.update({ x: 0 });
+    this.itemRef.update({ y: 0 });
+    this.itemRef.update({ z: 0 });
+    this.itemRef.update({ time: 0 });
   }
 
   dMotionWatch(){
@@ -56,6 +56,17 @@ export class HomePage {
   dMotionUnwatch(){
     this.watch.unsubscribe();
     this.fn = "Device Motion Clear";
+  }
+
+  slash(){
+    this.deviceMotion.getCurrentAcceleration().then(acceleration =>{
+      this.oX = acceleration.x; this.itemRef.update({ x: acceleration.x });
+      this.oY = acceleration.y; this.itemRef.update({ y: acceleration.y });
+      this.oZ = acceleration.z; this.itemRef.update({ z: acceleration.z });
+      this.oT = acceleration.timestamp; this.itemRef.update({ time: acceleration.timestamp });
+    }).catch(err=>{
+      console.log(err);
+    });
   }
 
 }

@@ -7,30 +7,21 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-item>
+  <ion-item vertical="center" horizontal="center">
       {{ items | async | json }}
   </ion-item>
-  <ion-list>
-      <ion-item>
-        <ion-label>X:{{oX}}</ion-label>
-      </ion-item>
-      <ion-item> 
-        <ion-label>Y:{{oY}}</ion-label>
-      </ion-item>
-      <ion-item> 
-        <ion-label>Z:{{oZ}}</ion-label>
-      </ion-item>
-      <ion-item> 
-        <ion-label>Time:{{oT}}</ion-label>
-      </ion-item>
-      <ion-item> 
-        <ion-label>Function:{{fn}}</ion-label>
-      </ion-item>
-      <ion-item> 
-        <ion-label>Object:{{oO}}</ion-label>
-      </ion-item>
-  </ion-list>
-  <ion-button expand="block" (click)="updateValue()" >Update Var</ion-button>
+
+  <ion-button expand="block" (click)="updateValue()" >Reset Value</ion-button>
   <ion-button expand="block" (click)="dMotionWatch()" >Watch</ion-button>
   <ion-button expand="block" (click)="dMotionUnwatch()" >Unwatch</ion-button>
+
+  <!-- <ion-fab vertical="bottom" slot="fixed">  -->
+      <ion-button expand="block" (click)="slash()" >Slash</ion-button>
+  <!-- </ion-fab> -->
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="flash"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>
